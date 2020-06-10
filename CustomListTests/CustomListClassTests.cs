@@ -83,5 +83,36 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
 
         }
+
+        [TestMethod]
+        public void AddOne_CheckIndexZero()
+        {
+            //arange
+            MyList<int> myList = new MyList<int>();
+            int expected = 1;
+            int actual;
+
+            //act
+            myList.Add(1);
+            actual = myList[0];
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void AddTwo_CheckIndexOne()
+        {
+            MyList<int> myList = new MyList<int>();
+            int expected = 2;
+            int actual;
+
+            myList.Add(1);
+            myList.Add(2);
+            actual = myList[1];
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
