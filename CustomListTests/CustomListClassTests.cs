@@ -113,6 +113,37 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void AddThree_CheckIndexThree()
+        {
+            MyList<int> myList = new MyList<int>();
+            int expected = 3;
+            int actual;
+
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            actual = myList[2];
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void AddFive_CheckIndexFour()
+        {
+            MyList<int> myList = new MyList<int>();
+            int expected = 5;
+            int actual;
+
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            myList.Add(4);
+            myList.Add(5);
+            actual = myList[4];
+
+            Assert.AreEqual(expected, actual);
+        }
+
 
     }
 }
