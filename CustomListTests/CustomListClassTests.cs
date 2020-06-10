@@ -144,6 +144,73 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
 
+        public void Remove_CheckCount_RemoveOneValue()
+        {
+            //arange
+            MyList<int> myList = new MyList<int>();
+            int expected = 2;
+            int actual;
+
+            //act
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            myList.Add(4);
+            myList.Remove(2);
+            actual = myList.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_CheckIndex_RemoveMiddleValue()
+        {
+            //arange
+
+            MyList<int> myList = new MyList<int>();
+            int expected = 6;
+            int actual;
+
+            //act
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            myList.Add(4);
+            myList.Add(5);
+            myList.Add(6);
+            myList.Add(7);
+            myList.Add(8);
+            myList.add(9);
+            myList.Add(10);
+            myList.Remove(5);
+            actual = myList[6];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
+
+        [TestMethod]
+        public void Remove_CheckCount_RemoveAllValues()
+        {
+            MyList<int> myList = new MyList<int>();
+            int expected = 0;
+            int actual;
+
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+
+            myList.Remove(1);
+            myList.Remove(2);
+            myList.Remove(3);
+            actual = myList.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
