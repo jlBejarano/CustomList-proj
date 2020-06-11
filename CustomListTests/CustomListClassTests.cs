@@ -232,5 +232,30 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void Remove_Five_CheckIndex()
+        {
+            MyList<int> myList = new MyList<int>();
+            string expected = null;
+            int actual;
+
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            myList.Add(4);
+            myList.Add(5);
+
+            myList.Remove(5);
+            myList.Remove(4);
+            myList.Remove(3);
+            myList.Remove(2);
+            myList.Remove(1);
+
+            actual = myList[0];
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
