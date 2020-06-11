@@ -212,5 +212,25 @@ namespace CustomListTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        public void ToString_Check_ListOfStrings()
+        {
+            //arange
+            MyList<string> myList = new MyList<string>();
+            string expected = "Hello";
+            string actual;
+
+            //act
+            myList.Add("H");
+            myList.Add("E");
+            myList.Add("L");
+            myList.Add("L");
+            myList.Add("O");
+
+            actual = myList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
