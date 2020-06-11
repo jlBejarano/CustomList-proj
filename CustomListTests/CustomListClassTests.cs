@@ -253,9 +253,9 @@ namespace CustomListTests
         [TestMethod]
         public void Add_Two_CheckCapacity()
         {
-            MyList<string> words = new MyList<string>()
+            MyList<string> words = new MyList<string>();
             int expected = 4;
-            string actual;
+            int actual;
 
             //act
             words.Add("My");
@@ -264,6 +264,37 @@ namespace CustomListTests
 
             Assert.AreEqual(expected, actual);
 
+        }
+
+        [TestMethod]
+        public void Add_Three_CheckCapacity()
+        {
+            MyList<string> words = new MyList<string>();
+            int expected = 4;
+            int actual;
+
+            words.Add("My");
+            words.Add("name");
+            words.Add("is");
+            actual = words.Capacity;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_Four_CheckCapacity()
+        {
+            MyList<string> words = new MyList<string>();
+            int expected = 4;
+            int actual;
+
+            words.Add("My");
+            words.Add("name");
+            words.Add("is");
+            words.Add("Jorge");
+            actual = words.Capacity;
+ 
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
@@ -289,5 +320,80 @@ namespace CustomListTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_OneNumber_ToString()
+        {
+            MyList<int> myList = new MyList<int>();
+            string expected = "1";
+            string actual;
+
+            myList.Add(1);
+
+            actual = myList.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_TwoNumbers_ToString()
+        {
+            MyList<int> myList = new MyList<int>();
+            string expected = "2";
+            string actual;
+
+            myList.Add(1);
+            myList.Add(2);
+
+            actual = myList.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_OneWord_ToString()
+        {
+            MyList<string> words = new MyList<string>();
+            string expected = "Coding";
+            string actual;
+
+            words.Add("Coding");
+
+            actual = words.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_TwoWords_ToString()
+        {
+            MyList<string> words = new MyList<string>();
+            string expected = "Coding is";
+            string actual;
+
+            words.Add("Coding");
+            words.Add("is");
+
+            actual = words.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_ThreeWords_ToString()
+        {
+            MyList<string> words = new MyList<string>();
+            string expected = "Coding is cool!";
+            string actual;
+
+            words.Add("Coding");
+            words.Add("is");
+            words.Add("cool!");
+
+            actual = words.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
