@@ -234,6 +234,38 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        public void Add_One_CheckCapacity()
+        {
+            //arange
+            MyList<string> words = new MyList<string>();
+            int expected = 4;
+            int actual;
+
+            //act
+            words.Add("My");
+            actual = words.Capacity;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Add_Two_CheckCapacity()
+        {
+            MyList<string> words = new MyList<string>()
+            int expected = 4;
+            string actual;
+
+            //act
+            words.Add("My");
+            words.Add("name");
+            actual = words.Capacity;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void Remove_Five_CheckIndex()
         {
